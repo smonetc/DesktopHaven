@@ -50,5 +50,6 @@ function watchForm() {
   
   $(function() {
     console.log('App loaded! Waiting for submit!');
-    console.log(watchForm());
+    // console.log(watchForm());
+    watchForm();
   });
