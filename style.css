@@ -1,3 +1,6 @@
+/* font-family: 'Bellota', cursive;
+font-family: 'Tenali Ramakrishna', sans-serif; */
+
 *{
     margin: 0;
     padding: 0;
@@ -7,6 +10,7 @@
 /* will choose a google font later */
 body{
     font-family: sans-serif;
+ 
 }
 
 header{
@@ -19,11 +23,16 @@ header{
 
 header h1{
     padding: 2rem;
+    font-family: 'Bellota', cursive;
+    /* font-size: 5rem; */
+    line-height: 100%;
+    word-spacing: 5px;
+  
 }
 
 #logo{
     text-decoration: none;
-    color: black;
+    color: #9C528B;
 }
 
 .search-form{
@@ -36,17 +45,33 @@ header h1{
     padding: 0.5rem;
     width: 100%;
     border: none;
-    border-bottom: 2px solid green;
+    border: 1px solid #E2C2C6;
+    border-radius: 15px;
+    font-family: 'Tenali Ramakrishna', sans-serif;
 }
 
 .search-form button{
     border: none;
-    padding: 0.5rem;
+    padding: 1rem;
+    margin-left: 1rem;
     font-size: 1rem;
-    border: 2px solid green;
+    border: 1px solid #E2C2C6;
+    border-radius: 15px;
     background-color: white;
     cursor: pointer;
+    color: #9C528B;
 }
+
+input:hover{
+    border: 1px solid #E2C2C6;
+    border-radius: 15px;
+}
+
+input:active{
+    border: 1px solid #E2C2C6;
+    border-radius: 15px;
+}
+
 .gallery{
     display: flex;
     flex-direction: row;
@@ -58,10 +83,13 @@ header h1{
 img{
     width: 300px;
     height: 300px;
+    border: 3px solid #B9929F;
 }
 
 p{
+    color: #9C528B;
     display: inline-block;
+    font-family: 'Tenali Ramakrishna', sans-serif;
 }
 
 #spacing{
@@ -70,7 +98,7 @@ p{
 
 a{
     text-decoration: none;
-    color: black;
+
     
 }
 
@@ -84,8 +112,42 @@ a{
 #more{
     padding: 1rem 3rem;
     background-color: white;
-    color: black;
-    border: 1px solid black;
+    color: #9C528B;
+    border: 1px solid #E2C2C6;
     border-radius: 15px;
     font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#photograph-info{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+i{
+    color: #E2C2C6;
+    font-size: 1.2rem;
+}
+
+button{
+    font-family: 'Tenali Ramakrishna', sans-serif;
+}
+
+@media screen and (max-width: 628px){
+    header h1{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 630px){
+    header h1{
+        font-size: 3.4rem;
+    }
+}
+
+@media screen and (min-width: 800px){
+    header h1{
+        font-size: 5rem;
+    }
 }
