@@ -7,12 +7,6 @@ font-family: 'Tenali Ramakrishna', sans-serif; */
     box-sizing: border-box;
 }
 
-/* will choose a google font later */
-body{
-    font-family: sans-serif;
- 
-}
-
 header{
     display: flex;
     flex-direction: column;
@@ -30,9 +24,6 @@ header h1{
   
 }
 
-h2{
-    font-family: 'Tenali Ramakrishna', sans-serif;
-}
 
 #logo{
     text-decoration: none;

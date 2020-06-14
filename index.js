@@ -2,10 +2,8 @@
 
 const apiKey = "563492ad6f91700001000001bce3f0f7f72942048eea4da3cb90d3b0";
 let page = 1;
-// commented out const url because I wanted the user to be able to
-//  view additional pages before searching for something specific 
-// const url = 'https://api.pexels.com/v1/curated?per_page=16&page=5';
 
+// fetchs the API for both the curated photos and searched photos
 
 function getPhoto(query,pageNum,showMore = false){
     let pageNumber;
@@ -19,8 +17,10 @@ function getPhoto(query,pageNum,showMore = false){
     let photoUrl;
 
     if(!query){
+        // curated photos:
         photoUrl = `https://api.pexels.com/v1/curated?per_page=16&page=${pageNumber}`;
     } else{
+        // search photos:
         photoUrl = `https://api.pexels.com/v1/search?query=${query}+query&per_page=16&page=${pageNumber}`
     }
     
@@ -39,6 +39,7 @@ function getPhoto(query,pageNum,showMore = false){
 }
 
 
+// populates the images  to the DOM
 
 function displayResults(responseJson, showMore = false) {
     if (showMore === false){
@@ -60,6 +61,8 @@ function displayResults(responseJson, showMore = false) {
     };
 } 
 
+// runs the More button allowing the user to generate more images to the app
+
 function moreImages(){
    
     $('#more').click(event =>{
@@ -67,6 +70,8 @@ function moreImages(){
      getPhoto(search,++page,true);
     });
 }
+
+// this function watches for the search submit button to activate
 
 function watchForm() {
     $('form').submit(event => {
