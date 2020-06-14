@@ -53,7 +53,7 @@ function displayResults(responseJson, showMore = false) {
         <img src="${responseJson.photos[i].src.medium}" class="img-search"> <br>
         <div id="photograph-info">
             <p>${responseJson.photos[i].photographer}</p>
-            <a href="${responseJson.photos[i].url}"><i class="fas fa-file-download"></i></a>
+            <a href="${responseJson.photos[i].url}" target="_blank"><i class="fas fa-file-download"></i></a>
         </div>
         </div>
     `)
