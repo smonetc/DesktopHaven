@@ -78,7 +78,6 @@ function watchForm() {
       event.preventDefault();
       let search = $('#search_input').val();
       getPhoto(search);
-    //   $('#search_input').val('');
     });
     moreImages();
     getPhoto();
@@ -86,7 +85,7 @@ function watchForm() {
   
   $(function() {
     console.log('App loaded! Waiting for submit!');
-    // console.log(watchForm());
+
     watchForm();
   });
 
