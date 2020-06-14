@@ -30,6 +30,10 @@ header h1{
   
 }
 
+h2{
+    font-family: 'Tenali Ramakrishna', sans-serif;
+}
+
 #logo{
     text-decoration: none;
     color: #9C528B;
