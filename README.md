@@ -23,7 +23,7 @@ Features:
 
 API: 
 
-https://www.pexels.com/
+[Pexel](https://www.pexels.com/)
 
 LANGUAGES USED:
 
@@ -35,4 +35,4 @@ LANGUAGES USED:
 
 DEMO:
 
-[Demo Link](https://smonetc.github.io/DesktopHaven/)
+[Link](https://smonetc.github.io/DesktopHaven/)
