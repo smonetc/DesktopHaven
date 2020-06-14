@@ -1,3 +1,6 @@
+DESKTOP HAVEN
+
+
 SCREENSHOTS:
 
 
@@ -5,9 +8,18 @@ SCREENSHOTS:
 
 ![](images/DesktopScreenShot2.jpeg)
 
+SUMMARY:
+
 Motivation:
 
 I wanted to create a web app where a user could download open source images and find new artist to follow.  
+
+Features:
+- View curated photos updated regularly
+- Search images by topic
+- View Photographer name
+- Download image for personal use
+
 
 API: 
 
@@ -20,12 +32,7 @@ LANGUAGES USED:
 - JAVASCRIPT
 - JQUERY
 
-FEATURES:
-- View curated photos updated regularly
-- Search images by topic
-- View Photographer name
-- Download image for personal use
 
 DEMO:
 
-https://smonetc.github.io/DesktopHaven/
+[Demo Link](https://smonetc.github.io/DesktopHaven/)
