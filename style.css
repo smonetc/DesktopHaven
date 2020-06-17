@@ -18,12 +18,10 @@ header{
 header h1{
     padding: 2rem;
     font-family: 'Bellota', cursive;
-    /* font-size: 5rem; */
+    font-size: 2.2rem;
     line-height: 100%;
     word-spacing: 5px;
-  
 }
-
 
 #logo{
     text-decoration: none;
@@ -43,6 +41,14 @@ header h1{
     border: 1px solid #E2C2C6;
     border-radius: 15px;
     font-family: 'Tenali Ramakrishna', sans-serif;
+}
+
+label{
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    font-size: 1.5rem;
+    padding-top: 14px;
+    color:  #E2C2C6;
+    padding-right: 4px;
 }
 
 .search-form button{
@@ -75,10 +81,23 @@ input:active{
     flex-wrap: wrap;
 }
 
+.error h3{
+    margin-top: 60px;
+    color: #9C528B;
+    text-align:center;
+    font-size: 2rem;
+  }
+
+  .error a{
+    color: #E2C2C6;
+    text-decoration: underline;
+  }
+
 img{
     width: 300px;
     height: 300px;
     border: 2px solid #B9929F;
+    background-size: cover;
 }
 
 p{
@@ -87,14 +106,12 @@ p{
     font-family: 'Tenali Ramakrishna', sans-serif;
 }
 
-#spacing{
+.spacing{
     margin: 10px;
 }
 
 a{
     text-decoration: none;
-
-    
 }
 
 .nav-button{
@@ -114,7 +131,7 @@ a{
     cursor: pointer;
 }
 
-#photograph-info{
+.photograph-info{
     margin-top: 5px;
     display: flex;
     justify-content: space-between;
@@ -129,20 +146,43 @@ button{
     font-family: 'Tenali Ramakrishna', sans-serif;
 }
 
-@media screen and (max-width: 628px){
-    header h1{
-        font-size: 2.5rem;
-    }
-}
-
 @media screen and (min-width: 630px){
     header h1{
         font-size: 3.4rem;
     }
+    label{
+        font-family: 'Tenali Ramakrishna', sans-serif;
+        font-size: 2.2rem;
+        padding-top: 7px;
+        color:  #E2C2C6;
+        padding-right: 4px;
+    }
+    img{
+        width: 350px;
+        height: 350px;
+        border: 2px solid #B9929F;
+        background-size: cover;
+    }
 }
+
+
 
 @media screen and (min-width: 800px){
     header h1{
         font-size: 5rem;
+    }
+
+    img{
+        width: 350px;
+        height: 350px;
+        border: 2px solid #B9929F;
+        background-size: cover;
+    }
+    label{
+        font-family: 'Tenali Ramakrishna', sans-serif;
+        font-size: 2.2rem;
+        padding-top: 7px;
+        color:  #E2C2C6;
+        padding-right: 4px;
     }
 }

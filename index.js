@@ -21,7 +21,7 @@ function getPhoto(query,pageNum,showMore = false){
         photoUrl = `https://api.pexels.com/v1/curated?per_page=16&page=${pageNumber}`;
     } else{
         // search photos:
-        photoUrl = `https://api.pexels.com/v1/search?query=${query}+query&per_page=16&page=${pageNumber}`
+        photoUrl = `https://api.pexels.com/v1/search?query=${query}+query&per_page=10&page=${pageNumber}`
     }
     
     fetch(photoUrl,
@@ -34,10 +34,24 @@ function getPhoto(query,pageNum,showMore = false){
         }
     )
     .then(response => response.json())
-    .then(responseJson => displayResults(responseJson, showMore))
-    .catch(error => alert('Something went wrong! Try again later'));
+    .then(responseJson => {
+        if (responseJson.total_results === 0) {
+            errorMessage();
+        } else {
+            displayResults(responseJson, showMore);
+        }
+    })
+    .catch(error => alert('Something went wrong! Try again later'))
 }
 
+
+// error message
+
+function errorMessage(){
+    $('.gallery').empty();
+    $('.nav-button').hide();
+    $('.error').show();
+}
 
 // populates the images  to the DOM
 
@@ -46,19 +60,21 @@ function displayResults(responseJson, showMore = false) {
         $('.gallery').empty();
     }
 
-  // loop throught the photos array 
-  
-    for (let i = 0; i < responseJson.photos.length; i++){
-    $('.gallery').append(`
-       <div id="spacing">
-        <img src="${responseJson.photos[i].src.medium}" class="img-search"> <br>
-        <div id="photograph-info">
-            <p>${responseJson.photos[i].photographer}</p>
-            <a href="${responseJson.photos[i].url}" target="_blank"><i class="fas fa-file-download"></i></a>
-        </div>
-        </div>
-    `)
-    };
+        for (let i = 0; i < responseJson.photos.length; i++){
+            $('.gallery').append(`
+               <div class="spacing">
+                <img src="${responseJson.photos[i].src.large}" class="img-search" alt="image results"> <br>
+                <div class="photograph-info">
+                    <p>${responseJson.photos[i].photographer}</p>
+                    <a href="${responseJson.photos[i].url}" target="_blank"><i class="fas fa-file-download"></i></a>
+                </div>
+                </div>
+            `)
+            $('.nav-button').show();
+            $('.error').hide();
+
+            };
+
 } 
 
 // runs the More button allowing the user to generate more images to the app
@@ -84,8 +100,6 @@ function watchForm() {
   }
   
   $(function() {
-    console.log('App loaded! Waiting for submit!');
-
     watchForm();
   });
 
