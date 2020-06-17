@@ -100,10 +100,6 @@ function watchForm() {
   }
   
   $(function() {
-<<<<<<< HEAD
-=======
-    console.log('App loaded! Waiting for submit!');
->>>>>>> 264bb0fffde3b57e582c23d5cee80228a3f12ea9
     watchForm();
   });
 
