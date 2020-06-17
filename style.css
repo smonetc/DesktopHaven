@@ -97,7 +97,7 @@ img{
     width: 300px;
     height: 300px;
     border: 2px solid #B9929F;
-    background-size: cover;
+    object-fit:cover;
 }
 
 p{

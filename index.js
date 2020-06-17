@@ -36,18 +36,21 @@ function getPhoto(query,pageNum,showMore = false){
     .then(response => response.json())
     .then(responseJson => {
         if (responseJson.total_results === 0) {
-            errorMessage();
+            noResults();
         } else {
             displayResults(responseJson, showMore);
         }
     })
-    .catch(error => alert('Something went wrong! Try again later'))
+    .catch(function (error){
+        console.log(error);
+        alert('Something went wrong! Try again later')
+    })
 }
 
 
-// error message
+// no results function 
 
-function errorMessage(){
+function noResults(){
     $('.gallery').empty();
     $('.nav-button').hide();
     $('.error').show();
@@ -61,21 +64,25 @@ function displayResults(responseJson, showMore = false) {
     }
 
         for (let i = 0; i < responseJson.photos.length; i++){
-            $('.gallery').append(`
-               <div class="spacing">
-                <img src="${responseJson.photos[i].src.large}" class="img-search" alt="image results"> <br>
-                <div class="photograph-info">
-                    <p>${responseJson.photos[i].photographer}</p>
-                    <a href="${responseJson.photos[i].url}" target="_blank"><i class="fas fa-file-download"></i></a>
-                </div>
-                </div>
-            `)
+            $('.gallery').append(galleryItemTemplate(responseJson.photos[i].src.large,responseJson.photos[i].photographer,responseJson.photos[i].url ))
             $('.nav-button').show();
             $('.error').hide();
-
-            };
+};
 
 } 
+
+// HTML Template Generator 
+function galleryItemTemplate(src, photographer, url){
+   return `
+    <div class="spacing">
+     <img src="${src}" class="img-search" alt="image results"> <br>
+     <div class="photograph-info">
+         <p>${photographer}</p>
+         <a href="${url}" target="_blank"><i class="fas fa-file-download"></i></a>
+     </div>
+     </div>
+ `
+}
 
 // runs the More button allowing the user to generate more images to the app
 
